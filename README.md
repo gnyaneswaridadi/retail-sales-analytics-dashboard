@@ -48,4 +48,10 @@ This analysis paints a picture of a stable, not stagnant-in-a-bad-way, business:
 
 ---
 
+## Author
+
+**Gnyaneswari Dadi**
+
+Aspiring Data Analyst | Business Analytics Enthusiast | Machine Learning Learner
+
 *Full write-up with all charts and detailed findings: [`PROJECT_REPORT.md`](PROJECT_REPORT.md)*
