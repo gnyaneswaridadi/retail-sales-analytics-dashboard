@@ -1,4 +1,4 @@
-# Retail Sales Performance Analysis & Customer Segmentation
+# Retail Sales Performance Analysis
 
 ## Overview
 This project analyzes five years of retail transaction data to understand business performance and segments customers into actionable groups using RFM analysis. The goal is to determine whether the business is genuinely growing, which factors actually drive profit margin, and where retention effort should focus.
@@ -24,6 +24,9 @@ This project analyzes five years of retail transaction data to understand busine
 - **Best Customers + Loyal/High Value segments** make up 62.6% of customers but generate 78.1% of revenue — a healthier concentration than the flat customer base might suggest.
 - **At-Risk customers still represent 20.3% of revenue** — a meaningful, recoverable retention opportunity before they churn into the Lost/Low-Value segment (1.6% of revenue).
 
+## Conclusion
+This analysis paints a picture of a stable, not stagnant-in-a-bad-way, business: revenue holds steady rather than declining, and the customer base skews healthier than the flat top-line numbers alone would suggest, with almost 80% of revenue coming from customers in good standing. The clearest lever for improving profitability isn't regional strategy — the ANOVA result argues against over-indexing there — it's discounting policy, which behaves consistently enough across categories to be managed as a single company-wide decision rather than category-by-category. The next-highest-leverage opportunity is retention-focused: the At-Risk segment is large enough (20.3% of revenue) that even modest improvement there is likely worth more than acquiring new customers at the margins observed in this dataset.
+
 ## Tools Used
 - Python (pandas, numpy, scipy)
 - matplotlib, seaborn (visualization)
@@ -36,10 +39,12 @@ This project analyzes five years of retail transaction data to understand busine
 4. Open `notebooks/Retail_Sales_Performance.ipynb` in Jupyter or Colab and run all cells.
 5. Open `Retail_Sales_Dashboard.pbix` in Power BI Desktop to explore the interactive dashboard.
 
-## Possible Next Steps
-- Build a time-series forecast (ARIMA/Prophet) on monthly revenue to move from descriptive to predictive.
-- Quantify a cost-benefit estimate for capping high-discount orders, based on the observed margin gap between discount bands.
-- Test whether the state-level ANOVA result changes with a longer time window or a city-level (rather than state-level) breakdown.
+## Future Improvements
+- **Revenue forecasting** — build a time-series model (ARIMA/Prophet) on monthly revenue to move from descriptive to predictive, and test whether the "flat" trend is expected to continue.
+- **Cost-benefit quantification** — estimate, in dollar terms, how much margin could be recovered by capping high-discount orders, based on the ~8-point margin gap observed between discount bands.
+- **Re-test the regional finding** — check whether the ANOVA result changes with a longer time window or a city-level (rather than state-level) breakdown, since state may be too coarse a grouping to detect a real effect.
+- **Predictive retention model** — a classifier trained to flag customers likely to move from At-Risk into Lost/Low-Value before it happens, rather than relying on the static RFM snapshot alone.
+- **Interactive exploration app** — a lightweight Streamlit/Plotly Dash layer for filtering by region/category/segment interactively (the Power BI dashboard already serves this need for a business audience, but a lighter web app could serve a portfolio/demo audience).
 
 ---
 
